@@ -28,6 +28,16 @@ img {
   align-items: center;
 }
 
+.title {
+  font-size: medium;
+  font-weight: 300;
+}
+
+.price {
+  color: black;
+  font-weight: 600;
+}
+
 .addToCart {
   position: absolute;
   width: 80%;

@@ -33,7 +33,7 @@ function Card({ data }) {
       <div className={styles.card__body}>
         <div className={styles.cardBody__info}>
           <h4 className={styles.title}>{data?.title}</h4>
-          <p className={styles.price}>{data?.price}</p>
+          <p className={styles.price}>{data?.price}$</p>
         </div>
         <button className={styles.addToCart}>ADD</button>
       </div>

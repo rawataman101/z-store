@@ -1,3 +1,22 @@
+.wrapper {
+  display: flex;
+}
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  margin-left: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.control:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s ease-in;
+}
 .products {
   width: 100vw;
   height: 100vh;
