@@ -12,9 +12,26 @@ import {
 function App() {
   return (
     <div className="app">
-      <Header />
-      <Landing />
-      <Products />
+      <Switch>
+        <Route
+          path="/products"
+          element={
+            <>
+              <Header />
+              <Products />
+            </>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Landing />
+            </>
+          }
+        />
+      </Switch>
     </div>
   );
 }

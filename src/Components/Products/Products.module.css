@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  margin-top: 20px;
 }
 .control {
   display: flex;

@@ -9,7 +9,11 @@
   display: flex;
   cursor: pointer;
 }
-.logo,
+.logo {
+  font-weight: 600;
+  margin-left: 35px;
+}
+
 .newest,
 .categories {
   margin-left: 35px;

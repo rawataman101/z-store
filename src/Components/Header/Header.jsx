@@ -4,12 +4,15 @@ import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchBar from "../SearchBar/SearchBar";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.left__side}>
-        <div className={styles.logo}>ZStore</div>
+        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+          <div className={styles.logo}>ZStore</div>
+        </Link>
         <div className={styles.newest}>Categories</div>
         <div className={styles.categories}>Newest Arrival</div>
       </div>
