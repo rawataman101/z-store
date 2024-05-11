@@ -1,0 +1,15 @@
+.searchBar {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+}

@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.left__side {
+  display: flex;
+  cursor: pointer;
+}
+.logo,
+.newest,
+.categories {
+  margin-left: 35px;
+}
+
+.right__side {
+  display: flex;
+}
+
+.rightSide__icons {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.cart {
+  margin-left: 35px;
+  cursor: pointer;
+}
