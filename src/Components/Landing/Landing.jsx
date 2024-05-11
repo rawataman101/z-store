@@ -11,7 +11,7 @@ function Landing() {
           <span>100K</span> <br /> HAPPY CUSTOMERS
         </h3>
         <p>Your One-Stop Shop for Everything</p>
-        <button>Shop Now</button>
+        <button className={styles.shopButton}>Shop Now</button>
       </div>
       <div className={styles.right__side}>
         <div className={styles.landing__image}>
