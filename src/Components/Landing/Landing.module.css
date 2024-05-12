@@ -16,9 +16,27 @@
   margin-left: 50px;
 }
 
+h1,
 h3,
 p {
-  padding-left: 25px;
+  padding-left: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-weight: 400;
+}
+span {
+  color: #ff735c;
+  font-weight: bold;
+}
+h3 {
+  font-weight: 600;
+}
+p {
+  color: gray;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .shopButton {

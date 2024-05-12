@@ -26,6 +26,7 @@ function Products() {
     setSelectedProduct(data);
     setShowModal(true);
   };
+
   useEffect(() => {
     fetchProducts().then((data) => {
       setProducts(data);

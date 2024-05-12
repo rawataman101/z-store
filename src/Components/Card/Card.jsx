@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Card.module.css";
 import { styled } from "@mui/material/styles";
 import Rating from "@mui/material/Rating";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { postCartItems } from "../../api/api";
+import { useEffect } from "react";
 
 const StyledRating = styled(Rating)({
   "& .MuiRating-iconFilled": {
@@ -15,9 +17,15 @@ const StyledRating = styled(Rating)({
 });
 
 function Card({ data, onClick }) {
-  const handleCart = () => {
-    console.log("clicked cart");
+  const handleAddToCart = (product) => {
+    try {
+      postCartItems(data.id, data);
+      console.log("Product added to cart:", product);
+    } catch (error) {
+      console.error("Error adding product to cart:", error);
+    }
   };
+
   return (
     <div className={styles.card}>
       <StyledRating
@@ -38,7 +46,10 @@ function Card({ data, onClick }) {
           <h4 className={styles.title}>{data?.title}</h4>
           <p className={styles.price}>${data?.price}</p>
         </div>
-        <button className={styles.addToCart} onClick={handleCart}>
+        <button
+          className={styles.addToCart}
+          onClick={() => handleAddToCart(data)}
+        >
           ADD
         </button>
       </div>
