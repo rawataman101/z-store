@@ -11,7 +11,7 @@ function Header() {
     <div className={styles.wrapper}>
       <div className={styles.left__side}>
         <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-          <div className={styles.logo}>ZStore</div>
+          <div className={styles.logo}>Zstore</div>
         </Link>
         <div className={styles.newest}>Categories</div>
         <div className={styles.categories}>Newest Arrival</div>

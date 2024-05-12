@@ -4,10 +4,10 @@
   height: 400px;
   padding: 20px;
   border: 1px solid #d1d1d1;
+  cursor: pointer;
 }
 .rating {
   position: absolute;
-  padding: 5px;
   top: 0;
   left: 0;
   font-size: 15px;
@@ -44,4 +44,11 @@ img {
   bottom: 10px;
   background-color: white;
   border: 1px solid black;
+  cursor: pointer;
+}
+
+.addToCart:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s ease-in;
 }
