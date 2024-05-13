@@ -32,3 +32,15 @@
   margin-left: 35px;
   cursor: pointer;
 }
+
+@media (width <= 900px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .left__side,
+  .right__side {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}

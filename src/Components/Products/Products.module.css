@@ -36,3 +36,13 @@
   align-items: center;
   margin-bottom: 200px;
 }
+
+@media (width < 900px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .control {
+    margin-bottom: 10px;
+  }
+}

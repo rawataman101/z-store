@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Cart.module.css";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import { useDispatch, useSelector } from "react-redux";
+import { SnackbarProvider, enqueueSnackbar } from "notistack";
 
 function Cart({ onClose }) {
   const cartItems = useSelector((state) => state);
@@ -40,7 +41,12 @@ function Cart({ onClose }) {
           })
         )}
         {cartItems.cartItems.length > 0 && (
-          <div className={styles.checkoutButton}>Checkout</div>
+          <div
+            className={styles.checkoutButton}
+            onClick={() => enqueueSnackbar("Success", { variant: "success" })}
+          >
+            Checkout
+          </div>
         )}
       </div>
     </div>

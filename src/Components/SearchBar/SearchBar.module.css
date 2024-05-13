@@ -1,6 +1,6 @@
 .searchBar {
   position: relative;
-  width: 25%;
+  min-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;

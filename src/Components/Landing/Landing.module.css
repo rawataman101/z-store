@@ -74,3 +74,20 @@ img {
   height: 100%;
   object-fit: contain;
 }
+
+@media (width <= 768px) {
+  .landing {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .left__side {
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .landing__image {
+    margin-top: 20px;
+  }
+}
