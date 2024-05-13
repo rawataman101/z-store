@@ -19,6 +19,7 @@
   flex-direction: column;
   padding: 25px;
   margin-left: auto;
+  overflow-y: scroll;
 }
 
 .closeButton {
@@ -33,19 +34,37 @@
 }
 
 .cart__body {
+  height: 10%;
+  margin-bottom: 5px;
   border: 1px solid black;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cart__image {
   width: 100px;
-  height: 100%;
-  align-content: center;
+  height: 50px;
 }
+
 img {
   object-fit: contain;
+}
+
+.title {
+  width: 20%;
+}
+
+.priceTag {
+  font-size: 12px;
+}
+
+.removeIcon {
+  margin-left: auto;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .checkoutButton {

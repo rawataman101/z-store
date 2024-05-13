@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Card.module.css";
 import { styled } from "@mui/material/styles";
 import Rating from "@mui/material/Rating";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { postCartItems } from "../../api/api";
-import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const StyledRating = styled(Rating)({
   "& .MuiRating-iconFilled": {
@@ -17,14 +16,12 @@ const StyledRating = styled(Rating)({
 });
 
 function Card({ data, onClick }) {
-  const handleAddToCart = (product) => {
-    try {
-      postCartItems(data.id, data);
-      console.log("Product added to cart:", product);
-    } catch (error) {
-      console.error("Error adding product to cart:", error);
-    }
-  };
+  const dispatch = useDispatch();
+
+  const addToCart = (product) => ({
+    type: "ADD_TO_CART",
+    payload: product,
+  });
 
   return (
     <div className={styles.card}>
@@ -48,7 +45,7 @@ function Card({ data, onClick }) {
         </div>
         <button
           className={styles.addToCart}
-          onClick={() => handleAddToCart(data)}
+          onClick={() => dispatch(addToCart(data))}
         >
           ADD
         </button>

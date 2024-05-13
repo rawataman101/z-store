@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -6,19 +6,15 @@ import PersonIcon from "@mui/icons-material/Person";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
-import { fetchCartItems } from "../../api/api";
+import { useSelector } from "react-redux";
 
 function Header() {
   const [openCart, setOpenCart] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const cartItems = useSelector((state) => state);
 
   const handleCart = () => {
     setOpenCart(!openCart);
   };
-
-  useEffect(() => {
-    fetchCartItems().then((data) => setCartItems(data));
-  }, []);
 
   return (
     <div className={styles.wrapper}>
@@ -35,7 +31,8 @@ function Header() {
         <FavoriteIcon className={styles.rightSide__icons} />
         <PersonIcon className={styles.rightSide__icons} />
         <div className={styles.cart} onClick={handleCart}>
-          cart({cartItems?.length > 8 ? cartItems.length : 1})
+          cart(
+          {cartItems?.cartItems.length > 0 ? cartItems.cartItems.length : 0})
         </div>
       </div>
       {openCart && <Cart onClose={() => setOpenCart(false)} />}
