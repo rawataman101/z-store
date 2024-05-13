@@ -2,6 +2,8 @@ import { createStore } from "redux";
 
 const initialState = {
   cartItems: [],
+  products: [],
+  loading: false,
 };
 
 // Reducer function
@@ -31,6 +33,17 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cartItems: state.cartItems.filter((item) => item.id !== action.payload),
+      };
+
+    case "UPDATE_PRODUCTS":
+      return {
+        ...state,
+        products: action.payload,
+      };
+    case "SET_LOADING":
+      return {
+        ...state,
+        loading: action.payload,
       };
     default:
       return state;

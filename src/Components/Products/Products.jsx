@@ -4,14 +4,12 @@ import { fetchProducts } from "../../api/api";
 import Card from "../Card/Card";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import Product from "../Product/Product";
+import { Link } from "react-router-dom";
 
 function Products() {
   const [products, setProducts] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const handleSortByPrice = (type) => {
     const sorted = [...products];
@@ -20,11 +18,6 @@ function Products() {
     } else {
       setSortedProducts(sorted.sort((a, b) => b.price - a.price));
     }
-  };
-
-  const handleCardClick = (data) => {
-    setSelectedProduct(data);
-    setShowModal(true);
   };
 
   useEffect(() => {
@@ -59,11 +52,12 @@ function Products() {
           <>
             {(sortedProducts.length ? sortedProducts : products).map(
               (product) => (
-                <Card
-                  key={product.id}
-                  data={product}
-                  onClick={() => handleCardClick(product)}
-                />
+                <Link
+                  to={`/products/${product.id}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <Card key={product.id} data={product} />
+                </Link>
               )
             )}
           </>
@@ -71,12 +65,6 @@ function Products() {
           <p className={styles.loading}>loading...</p>
         )}
       </div>
-      {showModal && (
-        <Product
-          onClose={() => setShowModal(false)}
-          product={selectedProduct}
-        />
-      )}
     </div>
   );
 }

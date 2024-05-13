@@ -1,16 +1,14 @@
 .wrapper {
-  position: fixed;
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(200, 200, 200, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .product {
-  width: 500px;
-  height: 500px;
+  width: 80%;
+  height: 80%;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -38,7 +36,9 @@
   height: 100%;
 }
 
-.img {
+.product_image img {
+  width: 500px;
+  height: 500px;
   object-fit: contain;
 }
 
@@ -56,4 +56,12 @@
 .price {
   font-size: x-large;
   font-weight: bold;
+}
+
+.moreButton {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid black;
+  text-align: center;
+  margin-left: auto;
 }

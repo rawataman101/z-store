@@ -5,6 +5,7 @@ import Rating from "@mui/material/Rating";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useDispatch } from "react-redux";
+import { enqueueSnackbar } from "notistack";
 
 const StyledRating = styled(Rating)({
   "& .MuiRating-iconFilled": {
@@ -15,13 +16,16 @@ const StyledRating = styled(Rating)({
   },
 });
 
-function Card({ data, onClick }) {
+function Card({ data }) {
   const dispatch = useDispatch();
 
-  const addToCart = (product) => ({
-    type: "ADD_TO_CART",
-    payload: product,
-  });
+  const addToCart = (product) => {
+    enqueueSnackbar("Added to Cart.", { variant: "success" });
+    return {
+      type: "ADD_TO_CART",
+      payload: product,
+    };
+  };
 
   return (
     <div className={styles.card}>
@@ -35,11 +39,11 @@ function Card({ data, onClick }) {
         icon={<FavoriteIcon fontSize="inherit" />}
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
       />
-      <div className={styles.card__image} onClick={() => onClick(data)}>
+      <div className={styles.card__image}>
         <img src={data.image} alt="product_image" />
       </div>
       <div className={styles.card__body}>
-        <div className={styles.cardBody__info} onClick={() => onClick(data)}>
+        <div className={styles.cardBody__info}>
           <h4 className={styles.title}>{data?.title}</h4>
           <p className={styles.price}>${data?.price}</p>
         </div>
